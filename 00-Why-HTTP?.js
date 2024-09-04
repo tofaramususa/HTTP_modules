@@ -1,10 +1,19 @@
 //Communicating with the web
 
-const items = await getItemData()
+async function main() {
+  const items = await getItemData()
+  logItems(items)
+}
 
-logItems(items)
-
-// don't touch below this line
+// Helper functions
+function generateKey() {
+  const characters = 'ABCDEF0123456789'
+  let result = ''
+  for (let i = 0; i < 16; i++){
+    result += characters.charAt(Math.floor(Math.random() * characters.length))
+  }
+  return result
+}
 
 async function getItemData() {
   const apiKey = generateKey()
@@ -19,19 +28,11 @@ async function getItemData() {
   return response.json()
 }
 
-function generateKey() {
-  const characters = 'ABCDEF0123456789'
-  let result = ''
-  for (let i = 0; i < 16; i++){
-    result += characters.charAt(Math.floor(Math.random() * characters.length))
-  }
-  return result
-}
-
 function logItems(items) {
   for (const item of items) {
     console.log(item.name)
   }
 }
 
-// 
+// Run the main function
+main().catch(error => console.error('An error occurred:', error))
