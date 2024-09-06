@@ -38,3 +38,9 @@ This repository explores essential concepts in web communication, focusing on HT
 ## Further Learning
 
 For more in-depth information on these topics, refer to the individual markdown files in the repository.
+- Implement a webserver from scratch
+- Implement JWT tokens, Authentication(remote too), 2factor authentication
+- Implement Advanced APIs
+- Implement websockets
+- Implement webhooks
+- REST APIs and message queues
